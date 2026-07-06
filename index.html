@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정책지원관 비서</title>
+<style>
+  :root {
+    --bg-start: #0b1c3d;
+    --bg-end: #06122b;
+    --card-bg: #ffffff;
+    --text-light: #e6ecff;
+    --text-muted: #9fb0d9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Pretendard", "Malgun Gothic", -apple-system, sans-serif;
+    background: radial-gradient(circle at 15% 15%, #163062 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, #14264a 0%, transparent 45%),
+                linear-gradient(180deg, var(--bg-start), var(--bg-end));
+    color: var(--text-light);
+    padding: 56px 24px 80px;
+  }
+  .page {
+    max-width: 1040px;
+    margin: 0 auto;
+    position: relative;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  h1 {
+    font-size: 2.4rem;
+    margin: 0 0 12px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin: 0 0 20px;
+  }
+  .date-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  /* 공모사업 일정 · 경기도의원 현황 - 작게, 한쪽 구석 */
+  .mini-cards {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mini-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-light);
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .mini-card:hover { background: rgba(255,255,255,0.12); }
+  .mini-card .mini-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #15803d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .mini-card .mini-icon.blue { background: #1d4ed8; }
+  .mini-card .mini-text {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+  .mini-card .mini-title {
+    font-weight: 700;
+    font-size: 0.78rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: var(--card-bg);
+    color: #1a2233;
+    border-radius: 16px;
+    padding: 24px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 210px;
+  }
+  .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .icon.purple { background: #4f46e5; }
+  .icon.orange { background: #b45309; }
+  .icon.maroon { background: #9f1239; }
+  .icon.teal { background: #0f766e; }
+  .icon.sky { background: #0369a1; }
+
+  .card h2 {
+    font-size: 1.1rem;
+    margin: 0 0 8px;
+  }
+  .card p {
+    font-size: 0.85rem;
+    color: #5b6478;
+    line-height: 1.5;
+    margin: 0 0 16px;
+    flex-grow: 1;
+  }
+  @media (max-width: 760px) {
+    .grid { grid-template-columns: 1fr; }
+    .mini-cards { position: static; align-items: center; margin: 0 auto 24px; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>정책지원관 비서</h1>
+      <p class="subtitle">정책지원관 의정활동 지원 도구 모음</p>
+      <span class="date-badge">2026.07.01 기준</span>
+    </header>
+
+    <div class="mini-cards">
+      <a class="mini-card" href="https://ggc-attendance.vercel.app" target="_blank" rel="noopener">
+        <span class="mini-icon blue">🏛️</span>
+        <span class="mini-text">
+          <span class="mini-title">경기도의원 현황</span>
+        </span>
+      </a>
+
+      <a class="mini-card" href="#" target="_blank" rel="noopener">
+        <span class="mini-icon">📋</span>
+        <span class="mini-text">
+          <span class="mini-title">공모 일정</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="http://localhost:3000" target="_blank" rel="noopener">
+        <div class="icon maroon">⚖️</div>
+        <h2>조례 제개정 비서</h2>
+        <p>조례 제 · 개정안 검토와 작성 과정을 자동화하는 시스템입니다.</p>
+      </a>
+
+      <div class="card">
+        <div class="icon orange">📝</div>
+        <h2>질의서 작성 비서</h2>
+        <p>상임위 · 행정사무감사 질의서 초안을 자동으로 작성하는 도구입니다.</p>
+      </div>
+
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <div class="icon purple">🎬</div>
+        <h2>발언카드 · 보도자료 비서</h2>
+        <p>회의 영상 · 회의록을 기반으로 발언카드, 보도자료, 발언요약보고서를 자동 생성합니다.</p>
+      </a>
+
+      <a class="card" href="https://complaint-assistant.vercel.app" target="_blank" rel="noopener">
+        <div class="icon teal">📮</div>
+        <h2>민원 처리 비서</h2>
+        <p>민원 내용을 붙여넣으면 담당 부서를 추천하고 처리주체를 안내합니다.</p>
+      </a>
+
+      <a class="card" href="https://budget-assistant-steel.vercel.app" target="_blank" rel="noopener">
+        <div class="icon sky">💰</div>
+        <h2>예산 분석 비서</h2>
+        <p>예산서 · 결산서를 분석해 사업별 증감 · 집행률 · 쟁점을 정리하고, 예산 · 결산 질의서 작성에 참고자료로 씁니다.</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

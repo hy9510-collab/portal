@@ -139,6 +139,26 @@
     margin: 0;
     flex-grow: 1;
   }
+  /* 링크가 2개인 카드(예: 발언카드) — 본문은 웹, 아래 작은 링크는 로컬 */
+  .card-main {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .card-local {
+    align-self: flex-start;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4f46e5;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #eef0fe;
+  }
+  .card-local:hover { background: #e0e3fc; }
   @media (max-width: 760px) {
     .grid { grid-template-columns: 1fr; }
   }
@@ -188,11 +208,14 @@
         <p>상임위 · 행정사무감사 질의서 초안을 자동으로 작성하는 도구입니다.</p>
       </a>
 
-      <a class="card" href="https://ggassembly-speechcard.vercel.app">
-        <div class="icon purple">🎬</div>
-        <h2>발언카드 · 보도자료 비서</h2>
-        <p>회의 영상 · 회의록을 기반으로 발언카드, 보도자료, 발언요약보고서를 자동 생성합니다.</p>
-      </a>
+      <div class="card">
+        <a class="card-main" href="https://ggassembly-speechcard.vercel.app">
+          <div class="icon purple">🎬</div>
+          <h2>발언카드 · 보도자료 비서</h2>
+          <p>회의 영상 · 회의록을 기반으로 발언카드, 보도자료, 발언요약보고서를 자동 생성합니다.</p>
+        </a>
+        <a class="card-local" href="http://localhost:4600">🖥 로컬에서 열기</a>
+      </div>
 
       <a class="card" href="https://complaint-assistant.vercel.app">
         <div class="icon teal">📮</div>

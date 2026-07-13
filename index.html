@@ -99,7 +99,7 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 13px;
   }
   .card {
@@ -160,7 +160,10 @@
     background: #eef0fe;
   }
   .card-local:hover { background: #e0e3fc; }
-  @media (max-width: 760px) {
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
     .grid { grid-template-columns: 1fr; }
   }
 </style>
